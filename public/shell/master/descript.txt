@@ -1,0 +1,7 @@
+charset,UTF-8
+type,shell
+id,master
+name,master
+craftman,SyoBoN
+craftmanw,SyoBoN
+craftmanurl,https://syobon.net/

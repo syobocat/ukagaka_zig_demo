@@ -1,0 +1,13 @@
+charset,UTF-8
+type,ghost
+id,ukagaka_zig_demo
+name,Demo Ghost
+sakura.name,Demo
+kero.name,
+craftman,SyoBoN
+craftmanw,SyoBoN
+craftmanurl,https://syobon.net/
+shiori,shiori.dll
+shiori.macos,libshiori.dylib
+shiori.version,3.0
+shiori.encoding,UTF-8

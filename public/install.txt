@@ -1,0 +1,4 @@
+charset,UTF-8
+type,ghost
+name,Demo Ghost
+directory,ukagaka_zig_demo

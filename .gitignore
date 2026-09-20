@@ -1,0 +1,7 @@
+.zig-cache/
+zig-pkg/
+
+updates.txt
+*.nar
+*.dll
+*.dylib
