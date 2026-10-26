@@ -13,11 +13,12 @@ pub fn load(io: Io, allocator: Allocator) @This() {
 
     var arena: ArenaAllocator = .init(allocator);
     defer arena.deinit();
+    var diag: ZonDiag = undefined;
     const parsed = std.zon.parse.fromSliceNoAlloc(@This(), .{
         .gpa = allocator,
         .arena = arena.allocator(),
         .source = content,
-        .diagnostics = undefined,
+        .diagnostics = &diag,
     }) catch return .{};
 
     return parsed;
