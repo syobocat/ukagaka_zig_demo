@@ -1,9 +1,9 @@
 .{
     .name = .ukagaka_zig_demo,
-    .version = "0.0.0",
+    .version = "0.1.0",
 
     .fingerprint = 0x9fda47c6277e6985,
-    .minimum_zig_version = "0.16.0",
+    .minimum_zig_version = "0.17.0",
     .dependencies = .{
         .ukadll = .{
             .url = "git+https://github.com/syobocat/ukadll_zig.git#79628fc4ad75361c687abe7b954a62e3ae83b467",

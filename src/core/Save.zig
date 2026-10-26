@@ -1,6 +1,8 @@
 const std = @import("std");
 const Allocator = std.mem.Allocator;
+const ArenaAllocator = std.heap.ArenaAllocator;
 const Io = std.Io;
+const ZonDiag = std.zon.parse.Diagnostics;
 
 affection: u32 = 0,
 
@@ -9,7 +11,14 @@ pub fn load(io: Io, allocator: Allocator) @This() {
     const content = cwd.readFileAllocOptions(io, "data.zon", allocator, .unlimited, .@"8", 0) catch return .{};
     defer allocator.free(content);
 
-    const parsed = std.zon.parse.fromSlice(@This(), allocator, content, null, .{}) catch return .{};
+    var arena: ArenaAllocator = .init(allocator);
+    defer arena.deinit();
+    const parsed = std.zon.parse.fromSliceNoAlloc(@This(), .{
+        .gpa = allocator,
+        .arena = arena.allocator(),
+        .source = content,
+        .diagnostics = undefined,
+    }) catch return .{};
 
     return parsed;
 }
